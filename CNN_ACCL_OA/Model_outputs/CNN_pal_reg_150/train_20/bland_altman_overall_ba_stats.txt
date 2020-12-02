@@ -1,0 +1,6 @@
+
+
+E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg_150/bland_altman
+upper_loa:1.51
+mean_bias:1.02
+lower_loa:0.69

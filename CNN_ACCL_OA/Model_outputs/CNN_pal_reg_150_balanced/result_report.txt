@@ -1,0 +1,15 @@
+
+
+ -------RESULTS-------
+
+
+Pearsons Correlation = (0.4675327437028164, 0.0)
+RMSE - 0.5937169194221497
+R2 Error - 0.21744820544639198
+Explained Variance Score - 0.21856266260147095
+Classes	['SED', 'LPA', 'MVPA']	
+Accuracy	0.5833	(0.5819, 0.5847)
+Sensitivity	[0.4136, 0.8918, 0.0223]
+Sensitivity CI	[(0.4116, 0.4155), (0.8905, 0.8932), (0.0208, 0.0237)]
+Specificity	[0.9023, 0.368, 0.9985]
+Specificity CI	[(0.9011, 0.9034), (0.3662, 0.3698), (0.9984, 0.9986)]

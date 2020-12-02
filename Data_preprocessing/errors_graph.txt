@@ -1,0 +1,85 @@
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+HOA5 'HOA5' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA11 'KOA11' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA41 'KOA41' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA5 'KOA5' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+KOA67 'KOA67' 
+OA1 No columns to parse from file 
+OA1 No columns to parse from file 
+OA1 No columns to parse from file 
+OA1 No columns to parse from file 
+OA10 list index out of range 
+OA18 'OA18' 
+OA18 'OA18' 
+OA18 'OA18' 
+OA18 'OA18' 
+OA18 'OA18' 
+OA18 'OA18' 
+OA18 'OA18' 
+OA2 No columns to parse from file 
+OA2 No columns to parse from file 
+OA2 No columns to parse from file 
+OA2 list index out of range 
+OA39 list index out of range 
+OA46 'OA46' 
+OA46 'OA46' 
+OA46 'OA46' 
+OA46 'OA46' 
+OA46 'OA46' 
+OA46 'OA46' 
+OA75 No columns to parse from file 
+OA75 No columns to parse from file 
+OA75 No columns to parse from file 
+OA75 No columns to parse from file 
+OA75 No columns to parse from file 
+OA75 No columns to parse from file 
+OA89 list index out of range 
+OA3 No columns to parse from file 
+OA3 No columns to parse from file 
+OA3 No columns to parse from file 
+OA3 No columns to parse from file 
+OA5 No columns to parse from file 
+OA5 No columns to parse from file 
+OA5 No columns to parse from file 
+OA5 No columns to parse from file 
+OA6 No columns to parse from file 
+OA6 No columns to parse from file 
+OA6 No columns to parse from file 
+OA6 No columns to parse from file 
+OA7 No columns to parse from file 
+OA7 No columns to parse from file 
+OA7 No columns to parse from file 

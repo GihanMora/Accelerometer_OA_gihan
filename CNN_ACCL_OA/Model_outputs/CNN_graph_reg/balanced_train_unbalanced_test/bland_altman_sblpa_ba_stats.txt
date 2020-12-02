@@ -1,0 +1,6 @@
+
+
+E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_reg/balanced_train_unbalanced_test/bland_altman_sblpa
+upper_loa:1.22
+mean_bias:1.02
+lower_loa:0.84
