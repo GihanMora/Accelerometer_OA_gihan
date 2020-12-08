@@ -29,7 +29,7 @@ for ef in epoch_files:
   if key in data_dict.keys():
     data_dict[key]['epoch'] = join(epoch_folder, ef)
 
-FREQUENCY = 60 #HZ amount of the accelerometer
+FREQUENCY = 60 #HZ amount of accelerometer
 REFERENCE_EPOCH = 60 #Epoch value that EE is given
 TIME_EPOCH_DICT = {
     # 'Epoch1': FREQUENCY * 1,
