@@ -29,12 +29,12 @@ import statistical_extensions as SE
 # sns.set()  # Default seaborn look and feel
 # plt.style.use('ggplot')
 
-training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/numpy_window-300-overlap-0_train/'
-test_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/numpy_window-300-overlap-0_test/'
-temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/temp_model_out/'
-MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/'
+training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/balanced/numpy_window-300-overlap-150_train/'
+test_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/numpy_window-300-overlap-150_test/'
+temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/balanced_train_unb_test/temp_model_out/'
+MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/balanced_train_unb_test/'
 TIME_PERIODS = 300
-model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/temp_model_out/'
+model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_clas/balanced_train_unb_test/temp_model_out/'
 
 
 

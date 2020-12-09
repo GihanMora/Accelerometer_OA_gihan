@@ -29,12 +29,12 @@ import statistical_extensions as SE
 # sns.set()  # Default seaborn look and feel
 # plt.style.use('ggplot')
 
-training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActiGraph/numpy_window-3600-overlap-0_train/'
+training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivGraph/balanced/numpy_window-3600-overlap-0_train/'
 test_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActiGraph/numpy_window-3600-overlap-0_test/'
-temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/temp_model_out/'
-MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/'
+temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/balanced_train_unbalanced_test/temp_model_out/'
+MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/balanced_train_unbalanced_test/'
 TIME_PERIODS = 3600
-model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/temp_model_out/'
+model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_graph_clas/balanced_train_unbalanced_test/temp_model_out/'
 
 
 
@@ -149,12 +149,17 @@ def plot_model(history, MODEL_FOLDER):
 #                       callbacks=callbacks_list,
 #                       validation_split=0.2,
 #                       verbose=2)
-
+#
 # plot_model(history, MODEL_FOLDER)
 
+
+
+
+#prediction part
+#
 num_classes = 3
 input_shape = 10800
-model_m =  load_model(join(temp_model_out_folder, 'best_model.008-0.11.h5'))
+model_m =  load_model(join(temp_model_out_folder, 'best_model.010-0.15.h5'))
 
 test_data_files = [join(test_dataset_path, f) for f in listdir(test_dataset_path) if isfile(join(test_dataset_path, f))]
 print(test_data_files)
@@ -216,3 +221,24 @@ result_string = '\n'.join(grp_results)
 with open(join(MODEL_FOLDER,  'result_report.txt'), "w") as text_file:
     text_file.write(result_string)
 
+
+# results_df = pd.DataFrame(
+#     {'subject': test_ID_user,
+#       'waist_ee': list(max_y_test),
+#       'predicted_ee': [list(i)[0] for i in list(max_y_pred_test)]
+#       })
+#
+# def clean_data_points(data):
+#     data = data.assign(waist_ee_cleaned=data['waist_ee'])
+#     data = data.assign(predicted_ee_cleaned=data['predicted_ee'])
+#     data.loc[(data['predicted_ee'] < 1), 'predicted_ee_cleaned'] = 1
+#     return data
+#
+# results_df = clean_data_points(results_df)
+#
+#
+# # import statistical_extensions_1 as SE1
+# SE.BlandAltman.bland_altman_paired_plot_tested(results_df, 'FOLDER_NAME', 1, log_transformed=True,
+#                                                 min_count_regularise=False, output_filename=join(MODEL_FOLDER, 'bland_altman'))
+#
+#

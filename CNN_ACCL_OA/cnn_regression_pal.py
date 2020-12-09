@@ -35,12 +35,12 @@ from sklearn.metrics import explained_variance_score, mean_squared_error, r2_sco
 
 import statistical_extensions as SE
 
-training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/balanced/numpy_window-300-overlap-150_train/'
+training_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/numpy_window-300-overlap-150_train/'
 test_dataset_path = 'E:/Data/Accelerometer_Dataset_Rashmika/OA_data/supervised_data/ActivPAL/numpy_window-300-overlap-150_test/'
-temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/balanced_train_unb_test/temp_model_out/'
-MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/balanced_train_unb_test/'
+temp_model_out_folder = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/temp_model_out/'
+MODEL_FOLDER = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/'
 TIME_PERIODS = 300
-model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/balanced_train_unb_test/temp_model_out/'
+model_checkpoint_path = 'E:/Projects/Accelerometer_OA_gihan/CNN_ACCL_OA/Model_outputs/CNN_pal_reg/temp_model_out/'
 
 def load_data(filenames):
 
@@ -87,27 +87,82 @@ def plot_model(history, MODEL_FOLDER):
     plt.savefig(MODEL_FOLDER + 'learning_history.png')
     plt.clf()
     plt.close()
-print('hi')
+# print('hi')
+#
+# training_data_files = [join(training_dataset_path, f) for f in listdir(training_dataset_path) if isfile(join(training_dataset_path, f))]
+#
+# print(training_data_files)
+# train_X_data, train_Y_data, train_ID_user = load_data(training_data_files)
+# X_train, y_train, ID_train = train_X_data, train_Y_data, train_ID_user
+# # # Data -> Model ready
+# print('first',(X_train.shape))
+# num_time_periods, num_sensors = X_train.shape[1], X_train.shape[2]
+#
+# # Set input_shape / reshape for Keras
+# input_shape = (num_time_periods * num_sensors)
+# X_train = X_train.reshape(X_train.shape[0], input_shape)
+#
+# # Convert type for Keras otherwise Keras cannot process the data
+# X_train = X_train.astype("float32")
+# y_train = y_train.astype("float32")
+#
+#
+#
 
-training_data_files = [join(training_dataset_path, f) for f in listdir(training_dataset_path) if isfile(join(training_dataset_path, f))]
+#
+#
+#
+#
+# """Model architecture"""
+# model_m = Sequential()
+# model_m.add(Reshape((TIME_PERIODS, num_sensors), input_shape=(input_shape,)))
+# model_m.add(Conv1D(80, 10, activation='relu', input_shape=(TIME_PERIODS, num_sensors)))
+# model_m.add(Conv1D(100, 10, activation='relu'))
+# model_m.add(MaxPooling1D(3))
+# model_m.add(Conv1D(160, 10, activation='relu'))
+# model_m.add(Conv1D(180, 10, activation='relu'))
+# model_m.add(MaxPooling1D(3))
+# model_m.add(Conv1D(220, 10, activation='relu'))
+# model_m.add(Conv1D(240, 10, activation='relu'))
+# model_m.add(GlobalMaxPooling1D())
+# model_m.add(Dropout(0.5))
+# model_m.add(Dense(1, activation='linear'))
+# print(model_m.summary)
+# callbacks_list = [
+#     ModelCheckpoint(
+#         filepath=model_checkpoint_path+'/best_model.{epoch:03d}-{val_loss:.2f}.h5',
+#         monitor='val_loss', save_best_only=True),
+#     TensorBoard(log_dir='logs\\{}'.format(time())),
+#     EarlyStopping(monitor='val_loss', patience=6)
+# ]
+#
+# model_m.compile(loss='mean_squared_error',
+#                 optimizer='adam',
+#                 metrics=['accuracy'])
+#
+# # Hyper-parameters
+# BATCH_SIZE = 32
+# EPOCHS = 10
+#
+# history = model_m.fit(X_train,
+#                       y_train,
+#                       batch_size=BATCH_SIZE,
+#                       epochs=EPOCHS,
+#                       callbacks=callbacks_list,
+#                       validation_split=0.2,
+#                       verbose=2)
+# _, accuracy = model_m.evaluate(X_train, y_train, batch_size=BATCH_SIZE, verbose=2)
+# print(accuracy)
+# plot_model(history, MODEL_FOLDER)
+#
 
-print(training_data_files)
-train_X_data, train_Y_data, train_ID_user = load_data(training_data_files)
-X_train, y_train, ID_train = train_X_data, train_Y_data, train_ID_user
-# # Data -> Model ready
-print('first',(X_train.shape))
-num_time_periods, num_sensors = X_train.shape[1], X_train.shape[2]
-
-# Set input_shape / reshape for Keras
-input_shape = (num_time_periods * num_sensors)
-X_train = X_train.reshape(X_train.shape[0], input_shape)
-
-# Convert type for Keras otherwise Keras cannot process the data
-X_train = X_train.astype("float32")
-y_train = y_train.astype("float32")
 
 
 
+#prediction part
+num_classes = 3
+input_shape = 900
+model_m =  load_model(join(temp_model_out_folder, 'best_model.010-0.15.h5'))
 test_data_files = [join(test_dataset_path, f) for f in listdir(test_dataset_path) if isfile(join(test_dataset_path, f))]
 print(test_data_files)
 test_X_data, test_Y_data, test_ID_user = load_data(test_data_files)
@@ -116,52 +171,6 @@ test_X_data = test_X_data.reshape(test_X_data.shape[0], input_shape).astype("flo
 print('first',test_X_data.shape)
 # test_X_data = test_X_data.astype("float32")
 test_Y_data = test_Y_data.astype("float32")
-
-
-
-
-"""Model architecture"""
-model_m = Sequential()
-model_m.add(Reshape((TIME_PERIODS, num_sensors), input_shape=(input_shape,)))
-model_m.add(Conv1D(80, 10, activation='relu', input_shape=(TIME_PERIODS, num_sensors)))
-model_m.add(Conv1D(100, 10, activation='relu'))
-model_m.add(MaxPooling1D(3))
-model_m.add(Conv1D(160, 10, activation='relu'))
-model_m.add(Conv1D(180, 10, activation='relu'))
-model_m.add(MaxPooling1D(3))
-model_m.add(Conv1D(220, 10, activation='relu'))
-model_m.add(Conv1D(240, 10, activation='relu'))
-model_m.add(GlobalMaxPooling1D())
-model_m.add(Dropout(0.5))
-model_m.add(Dense(1, activation='linear'))
-print(model_m.summary)
-callbacks_list = [
-    ModelCheckpoint(
-        filepath=model_checkpoint_path+'/best_model.{epoch:03d}-{val_loss:.2f}.h5',
-        monitor='val_loss', save_best_only=True),
-    TensorBoard(log_dir='logs\\{}'.format(time())),
-    EarlyStopping(monitor='val_loss', patience=6)
-]
-
-model_m.compile(loss='mean_squared_error',
-                optimizer='adam',
-                metrics=['accuracy'])
-
-# Hyper-parameters
-BATCH_SIZE = 32
-EPOCHS = 10
-
-history = model_m.fit(X_train,
-                      y_train,
-                      batch_size=BATCH_SIZE,
-                      epochs=EPOCHS,
-                      callbacks=callbacks_list,
-                      validation_split=0.2,
-                      verbose=2)
-_, accuracy = model_m.evaluate(X_train, y_train, batch_size=BATCH_SIZE, verbose=2)
-# print(accuracy)
-# plot_model(history, MODEL_FOLDER)
-#
 # print('Selecting best model.')
 #
 # model_files = [(join(temp_model_out_folder, f), int(f.split('-')[0].split('.')[1])) for f in
@@ -239,9 +248,9 @@ def clean_data_points(data):
     return data
 
 results_df = clean_data_points(results_df)
-result_string = '\n'.join(grp_results)
-with open(MODEL_FOLDER+'/result_report.txt', "w") as text_file:
-    text_file.write(result_string)
+# result_string = '\n'.join(grp_results)
+# with open(MODEL_FOLDER+'/result_report.txt', "w") as text_file:
+#     text_file.write(result_string)
 
 # import statistical_extensions_1 as SE1
 SE.BlandAltman.bland_altman_paired_plot_tested(results_df, 'FOLDER_NAME', 1, log_transformed=True,
