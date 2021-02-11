@@ -1,0 +1,6 @@
+Pearsons correlation Caron_1 : -0.027
+Sensitivity	[0.46494, 0.45261, 0.04138]
+Sensitivity CI	[(0.46406, 0.46582), (0.45098, 0.45423), (0.03937, 0.04339)]
+Specificity	[0.51336, 0.51925, 0.94445]
+Specificity CI	[(0.51181, 0.51491), (0.51839, 0.52011), (0.9441, 0.9448)]
+Spearman correlation Caron_1 : -0.015

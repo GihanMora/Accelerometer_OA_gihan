@@ -1,0 +1,6 @@
+Pearsons correlation Mont_17 : 0.049
+Sensitivity	[0.0, 0.0, 1.0]
+Sensitivity CI	[(0.0, 0.0), (0.0, 0.0), (1.0, 1.0)]
+Specificity	[1.0, 1.0, 0.0]
+Specificity CI	[(1.0, 1.0), (1.0, 1.0), (0.0, 0.0)]
+Spearman correlation Mont_17 : nan

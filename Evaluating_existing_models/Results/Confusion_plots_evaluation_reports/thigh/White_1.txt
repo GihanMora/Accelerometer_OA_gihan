@@ -1,0 +1,6 @@
+Pearsons correlation White_1 : 0.007
+Sensitivity	[0.764, 0.14041, 0.02542]
+Sensitivity CI	[(0.76371, 0.7643), (0.13971, 0.1411), (0.02462, 0.02623)]
+Specificity	[0.17429, 0.76242, 0.99925]
+Specificity CI	[(0.17358, 0.175), (0.76213, 0.76272), (0.99923, 0.99926)]
+Spearman correlation White_1 : -0.044

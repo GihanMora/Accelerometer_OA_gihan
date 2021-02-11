@@ -1,0 +1,6 @@
+Pearsons correlation Mont_15_FS_4 : 0.160
+Sensitivity	[0.65456, 0.29758, 0.47076]
+Sensitivity CI	[(0.65373, 0.6554), (0.29608, 0.29908), (0.46571, 0.4758)]
+Specificity	[0.62292, 0.72752, 0.87337]
+Specificity CI	[(0.62141, 0.62443), (0.72675, 0.72829), (0.87286, 0.87389)]
+Spearman correlation Mont_15_FS_4 : 0.295
